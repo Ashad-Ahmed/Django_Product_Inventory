@@ -64,17 +64,14 @@ class ProductView(APIView):
 
         #if both product category and product subcategory_type is queried through API
         if subcategory_type and category:
-            print(subcategory_type, category)
             queryset = Product.objects.filter(category__category_name =  category).filter(subcategory_type__subcategory_name =  subcategory_type)
 
         # If Only product category is queried
         elif category and not subcategory_type:
-            print(category)
             queryset = Product.objects.filter(category__category_name =  category)
 
         # If Only product subcategory_type is queried
         elif not category and subcategory_type:
-            print(category)
             queryset = Product.objects.filter(subcategory_type__subcategory_name =  subcategory_type)
         
         # Default case
@@ -82,7 +79,6 @@ class ProductView(APIView):
             queryset = Product.objects.all()
 
         serializer = ProductSerializer(queryset , many = True)
-        print(serializer.data)
         return Response({'data' :serializer.data})
 
 # Use below to orde the fields in ascending/descending
