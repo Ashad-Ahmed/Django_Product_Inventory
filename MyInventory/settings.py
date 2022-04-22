@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -53,7 +52,7 @@ MIDDLEWARE = [
 ]
 
 
-ROOT_URLCONF = 'MyBooks.urls'
+ROOT_URLCONF = 'MyInventory.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'MyBooks.wsgi.application'
+WSGI_APPLICATION = 'MyInventory.wsgi.application'
 
 
 # Database
