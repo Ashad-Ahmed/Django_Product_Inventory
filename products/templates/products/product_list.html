@@ -18,6 +18,7 @@
               <thead class="thead-dark">
                 <tr>
                     <th scope="col">Product</th>
+                    <th scope="col">Price</th>
                     <th scope="col">Category</th>
                     <th scope="col">SubCategory</th>
                     <th scope="col">View</th>
@@ -28,6 +29,7 @@
                 {% for product in object_list %}
                 <tr>
                     <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
                     <td>{{ product.category }}</td>
                     <td>{{ product.subcategory_type }}</td>
                     <td><a href="{% url 'product_view' product.id %}"><button type="button" class="btn btn-outline-primary btn-sm">View</button></a></td>
